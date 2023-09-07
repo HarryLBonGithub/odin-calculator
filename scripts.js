@@ -31,8 +31,33 @@ function operate(number1,number2,operator){
 }
 
 function inputSetup(){
-    let buttons = document.querySelectorAll(`.numbers > button`);
-    console.log(buttons);
+    let numberButtons = document.querySelectorAll(`.numbers > button`);
+    let operatorButtons = document.querySelectorAll(`.operators > button`);
+    let clearButton = document.querySelector(`.clear`);
+    let equalsButton = document.querySelector(`.equals`);
+    let display = document.querySelector(`.display`);
+
+    numberButtons.forEach(button => {
+        button.addEventListener('click',() =>{
+            
+            console.log(button.textContent);
+            display.textContent = display.textContent + button.textContent;
+        })
+    });
+
+    operatorButtons.forEach(button => {
+        button.addEventListener('click',() =>{
+            if (display.textContent == ""){
+                return;
+            }
+            console.log(button.textContent);
+            display.textContent = display.textContent + button.textContent;
+        })
+    });
+
+    clearButton.addEventListener('click',() =>{
+        display.textContent = "";
+    });
 }
 
 console.log("======[SCRIPTS ATTACHED]======");
