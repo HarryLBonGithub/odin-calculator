@@ -20,14 +20,36 @@ function divide(number1,number2){
 
 function operate(number1,number2,operator){
     if (operator == "+"){
-        add(number1,number2);
+        return add(number1,number2);
     } else if (operator == "-"){
-        subtract(number1,number2);
+        return subtract(number1,number2);
     } else if (operator == "x"){
-        multiply(number1,number2);
+        return multiply(number1,number2);
     } else if (operator == "/"){
-        multiply(number1,number2);
+        return divide(number1,number2);
     };
+}
+
+function equationToArray(equation){
+    splitEquation = equation.split(" ");
+    console.log(splitEquation);
+    
+    return splitEquation;
+}
+
+function calculateDisplay(){
+
+    let display = document.querySelector(`.display`);
+
+    let equationArray = equationToArray(display.textContent);
+
+    let answer= operate(Number(equationArray[0]),Number(equationArray[2]),equationArray[1]);
+
+    if (Number.isInteger(answer)){
+        display.textContent = answer;
+    } else {
+        display.textContent = answer.toFixed(2);
+    }
 }
 
 function inputSetup(){
@@ -50,15 +72,29 @@ function inputSetup(){
             if (display.textContent == ""){
                 return;
             }
+
+            if (display.textContent.includes(" ")){
+                calculateDisplay();
+            }
+
             console.log(button.textContent);
-            display.textContent = display.textContent + button.textContent;
+
+            opWithSpacing = " " + button.textContent + " ";
+
+            display.textContent = display.textContent + opWithSpacing;
         })
     });
 
     clearButton.addEventListener('click',() =>{
         display.textContent = "";
     });
+
+    equalsButton.addEventListener('click',calculateDisplay)
 }
+
+
+
+
 
 console.log("======[SCRIPTS ATTACHED]======");
 
