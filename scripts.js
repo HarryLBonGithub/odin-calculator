@@ -17,3 +17,15 @@ function multiply(number1,number2){
 function divide(number1,number2){
     return number1/number2;
 }
+
+function operate(number1,number2,operator){
+    if (operator == "+"){
+        add(number1,number2);
+    } else if (operator == "-"){
+        subtract(number1,number2);
+    } else if (operator == "*"){
+        multiply(number1,number2);
+    } else if (operator == "/"){
+        multiply(number1,number2);
+    };
+}
