@@ -23,11 +23,20 @@ function operate(number1,number2,operator){
         add(number1,number2);
     } else if (operator == "-"){
         subtract(number1,number2);
-    } else if (operator == "*"){
+    } else if (operator == "x"){
         multiply(number1,number2);
     } else if (operator == "/"){
         multiply(number1,number2);
     };
 }
 
+function inputSetup(){
+    let buttons = document.querySelectorAll(`.numbers > button`);
+    console.log(buttons);
+}
+
 console.log("======[SCRIPTS ATTACHED]======");
+
+inputSetup();
+
+
