@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.calculator{
+    background: gray;
+    border-radius: 15px;
+    padding: 1em;
+}
+
+.display{
+    background: lightgray;
+    padding: 1em;
+}

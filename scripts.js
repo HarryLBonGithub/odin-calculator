@@ -29,3 +29,5 @@ function operate(number1,number2,operator){
         multiply(number1,number2);
     };
 }
+
+console.log("======[SCRIPTS ATTACHED]======");
